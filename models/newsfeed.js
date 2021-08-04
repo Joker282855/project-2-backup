@@ -6,7 +6,7 @@ class Newsfeed extends Model {}
 Newsfeed.init(
     {
         id: {
-            types: DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
