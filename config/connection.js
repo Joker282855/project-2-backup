@@ -1,5 +1,5 @@
 // import the Sequlize constructor from the library 
-const Sequelize = require('sequilize');
+const Sequelize = require('sequelize');
 
 require('dotenv').config();
 

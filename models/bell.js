@@ -1,13 +1,13 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Contact extends Model {}
+class Bell extends Model {}
 
-Contact.init(
+Bell.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            allowNull: false, 
+            allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
@@ -15,13 +15,9 @@ Contact.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        email: {
+        fact : {
             type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true
-            }
+            allowNull: false
         }
     },
     {
@@ -29,8 +25,8 @@ Contact.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'contact'
+        modelName: 'bell'
     }
 );
 
-module.exports = Contact;
+module.exports = Bell;
