@@ -11,6 +11,25 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    Newsfeed.findOne({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbNewsfeedData => {
+            if (!dbNewsfeedData) {
+                res.status(404).json({ message: 'No name found with this id' });
+                return;
+            }
+            res.json(dbNewsfeedData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 router.post('/', (req, res) => {
     Newsfeed.create({
         name: req.body.name,
@@ -31,7 +50,7 @@ router.put('/:id', (req, res) => {
     })
     .then(dbNewsfeedData => {
         if(!dbNewsfeedData[0]) {
-            res.status(404).json({ message: 'No user found with this id' });
+            res.status(404).json({ message: 'No name found with this id' });
             return;
         }
         res.json(dbNewsfeedData);
@@ -41,5 +60,24 @@ router.put('/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+router.delete('/:id', (req, res) => {
+    Newsfeed.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(dbNewsfeedData => {
+        if (!dbNewsfeedData) {
+          res.status(404).json({ message: 'No name found with this id' });
+          return;
+        }
+        res.json(dbNewsfeedData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
 
 module.exports = router;
