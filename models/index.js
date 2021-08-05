@@ -1,6 +1,4 @@
-const Newsfeed = require('./Newsfeed');
-const User = require('./User');
+const User = require("./User");
+const Newsfeed = require("./Newsfeed");
 
-
-module.exports = { Newsfeed };
-module.exports = { User };
+module.exports = { User, Newsfeed };
