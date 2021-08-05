@@ -23,7 +23,7 @@ Calendar.init(
         },
         page: {
             type: DataTypes.INTEGER,
-            allowNull: true,
+            allowNull: true
         },
         date: {
             type: DataTypes.DATEONLY,

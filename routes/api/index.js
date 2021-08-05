@@ -5,9 +5,9 @@ const bellRoutes = require('./bell-routes.js');
 const contactRoutes = require('./contact-routes.js');
 const newsfeedRoutes = require('./newsfeed-routes.js');
 
-router.use('/calendars', calendarRoutes);
-router.use('/bells', bellRoutes);
-router.use('/contacts', contactRoutes);
-router.use('/newsfeeds', newsfeedRoutes);
+router.use('/calendar', calendarRoutes);
+router.use('/bell', bellRoutes);
+router.use('/contact', contactRoutes);
+router.use('/newsfeed', newsfeedRoutes);
 
 module.exports = router;
